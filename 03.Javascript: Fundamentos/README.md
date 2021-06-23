@@ -98,3 +98,56 @@ Não pode receber um novo valor.
 ```js
 const c = 3;
 ```
+
+# Tipagem Fraca
+
+[*voltar ao indice*](#índice)
+
+Javascript é uma linguagem com **tipagem fraca**, ou seja, suas variáveis tem tipagem dinâmica. Para saber o tipo de uma variável usasse `typeof variavel`
+
+Todos os tipos, com a exceção de objetos, definem valores imutáveis (valores que são incapazes de mudar).
+
+[ref](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Data_structures)
+
+**Tipo "Boolean"**
+
+Boolean representa uma entidade lógica e pode ter dois valores: verdadeiro(true) ou falso(false).
+
+**Tipo "Null"**
+
+O tipo Null tem exatamente um valor: null(nulo).
+
+**Tipo "Undefined"**
+
+Uma variável que não foi atribuída a um valor específico, assume o valor undefined(indefinido).
+
+**Tipo "Number"**
+
+De acordo com os padrões ECMAScript, existe somente um tipo numérico. O double-precision 64-bit binary format IEEE 754 value (número entre -(253 -1) e 253 -1). Não existe um tipo específico para inteiros. Além de poderem representar números de ponto-flutuante, o tipo number possui três valores simbólicos: +Infinity, -Infinity, e NaN (não numérico).
+
+Para verificar o maior ou o menor valor disponível dentro de +/-Infinity, você pode usar as constantes Number.MAX_VALUE ou Number.MIN_VALUE, e a partir do ECMAScript 6, você também consegue verificar se um número está dentro da região de um ponto flutuante do tipo double-precision, usando Number.isSafeInteger(), como também Number.MAX_SAFE_INTEGER, e Number.MIN_SAFE_INTEGER. Fora dessa região, números inteiros em JavaScript não são mais precisos e serão uma aproximação de um número de ponto flutuante do tipo double-precision
+
+**Tipo "String"**
+
+O tipo String em JavaScript é usado para representar dados textuais. Isto é um conjunto de "elementos" de valores de 16-bits unsigned integer. Cada elemento na string ocupa uma posição na string. O primeiro elemento está no índice 0, o próximo no índice 1, e assim por diante. O comprimento de uma string é o número de elementos nela.
+
+**Symbol type**
+
+Symbols são novos no JavaScript ECMAScript edição 6. Um Symbol é um valor primitivo único e imutável e pode ser usado como chave de uma propriedade de Object (ver abaixo). em algumas linguagens de programação, Symbols são chamados de atoms (átomos). Você também pode compará-los à enumerações nomeadas (enum) em C
+
+**Objetos**
+
+No JavaScript, objetos podem ser vistos como uma coleção de propriedades. Com o object literal syntax, um conjunto limitado de propriedades podem ser inicializados; a partir daí propriedades podem ser adicionadas e removidas. Estas propriedades podem assumir valores de qualquer tipo, incluindo outros objetos, o que permite construir estruturas de dados mais complexas. Propriedades são identificadas usando valores chave. Um valor chave pode ser uma String ou um valor Symbol.
+
+```js
+let qualquer = 'Legal';
+console.log(typeof qualquer); // string
+
+qualquer = 3.15;
+console.log(typeof qualquer); // number
+
+// Evitar nome genérico e sigla
+let valor = '';
+let numero = 1;
+let pqp = false; // Produto Químico Perigoso
+```
