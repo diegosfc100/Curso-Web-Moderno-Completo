@@ -66,3 +66,35 @@ rio
 
 - Evitar comentários desnecessários; 
 - Colocar bons nomes em variáveis.
+
+# O Básico de Var , Let e Const
+
+[*voltar ao indice*](#índice)
+
+**Var**
+
+A palavra reservada Var, **permite** que uma variável seja declarada mais de uma vez dentro do mesmo escopo. Forma **mais antiga**. Evite usar.
+Var tem escopo global e de função.  
+
+```js
+var a = 1;
+var a = 10;
+```
+
+**Let**
+
+Forma **mais moderna** de se criar as variáveis. O let, diferentemente do var, **não permite** que uma variável seja declarada mais de uma vez dentro do mesmo escopo.  
+Let tem **escopo global**, de função e de bloco.
+
+```js
+let b = 2;
+```
+
+**Const**
+
+Usado para declarar **constantes**, variáveis imutáveis.
+Não pode receber um novo valor.
+
+```js
+const c = 3;
+```
