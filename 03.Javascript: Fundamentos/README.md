@@ -209,7 +209,7 @@ console.log((10.345).toFixed(2))
 // 10.34
 ```
 
-# Math
+# Usando Math
 
 [*voltar ao indice*](#índice)
 
