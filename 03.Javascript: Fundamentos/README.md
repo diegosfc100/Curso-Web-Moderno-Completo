@@ -1154,5 +1154,27 @@ console.log(compras(false, false));
   }*/
 
   ```
+# Operadores: Unários
+
+[*voltar ao indice*](#índice)
+```js
+
+//Incrementos e Decremento
+//++variavel: é incrementado antes da ação.
+//variavel++: é incrementado após a função
+
+let num1 = 1  
+let num2 = 2
+
+num1++ 
+console.log(num1); // 2
+
+--num1
+console.log(num1); // 1
+
+console.log(++num1 === num2--); // true
+
+console.log(num1 === num2); // false
+```
 
   
