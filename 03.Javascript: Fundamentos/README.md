@@ -14,7 +14,7 @@
 - [Tipos em JavaScript: Boolean](#tipos-em-javascript-boolean)
 - [Tipos em JavaScript: Array](#tipos-em-javascript-array)
 - [Tipos em JavaScript: Object](#tipos-em-javascript-object)
-- [Entendo o Null & Undefined](#entendo-o-null--undefined)
+- [Entendendo o Null & Undefined](#entendendo-o-null--undefined)
 - [Quase Tudo é Função!!!](#quase-tudo-é-função)
 - [Exemplos Básicos de Funções #01](#exemplos-básicos-de-funções-01)
 - [Exemplos Básicos de Funções #02](#exemplos-básicos-de-funções-02)
@@ -646,4 +646,51 @@ const prod2 = {
 }
 
 console.log(prod2) // { nome: 'Camisa Polo', preco: 79.9, obj: { blabla: 1, obj: { blabla: 2 } } }
+```
+
+# Entendendo o Null & Undefined
+
+[*voltar ao indice*](#índice)
+
+A um conceito em que a diferença é atribuição por valor e por referencia.
+
+> Undefined é a copia por valor . E null por referencia.
+
+Quando o tipo é primitivo, a cópia é por valor
+Então quando é objeto, a cópia é por referência
+```js
+const a = { name: "a"}
+console.log(a); // { name: "a"}
+
+const b = a
+console.log(b); // { name: "a"}
+
+b.name = 'Opa'
+console.log(b); // { name: "Opa"}
+
+console.log(a); // { name: "Opa"}
+
+
+let valor; // não inicializada
+console.log(valor); // undefined
+
+valor = null // ausência de valor
+console.log(valor) // null
+//console.log(valor.toString()) // Erro!
+
+const produto = {};
+console.log(produto.preco); // undefined
+console.log(produto); // {}
+
+produto.preco = 3.50
+console.log(produto); // { preco: 3.5 }
+
+produto.preco = undefined // evite atribuir undefined
+console.log(!!produto.preco) // false
+delete produto.preco
+console.log(produto) // {}
+
+produto.preco = null // sem preço
+console.log(!!produto.preco) // false
+console.log(produto); // { preco: null }
 ```
