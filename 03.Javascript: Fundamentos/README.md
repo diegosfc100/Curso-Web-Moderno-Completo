@@ -18,10 +18,8 @@
 - [Exemplos Básicos de Funções](#exemplos-básicos-de-funções)
 - [Declaração de Variáveis Com Var](#declaração-de-variáveis-com-var)
 - [Declaração de Variáveis Com Let](#declaração-de-variáveis-com-let)
-- [Usando Var em Loop #01](#usando-var-em-loop-01)
-- [Usando Let em Loop #01](#usando-let-em-loop-01)
-- [Usando Var em Loop #02](#usando-var-em-loop-02)
-- [Usando Let em Loop #02](#usando-let-em-loop-02)
+- [Usando Var em Loop](#usando-var-em-loop)
+- [Usando Let em Loop](#usando-let-em-loop)
 - [Entendendo o Hoisting](#entendendo-o-hoisting)
 - [Função Vs Objeto](#função-vs-objeto)
 - [Par Nome/Valor](#par-nomevalor)
@@ -797,4 +795,51 @@ let numero = 1
 }
 
 console.log('fora =', numero);// fora = 1
+```
+
+# Usando Var em Loop
+
+[*voltar ao indice*](#índice)
+
+```js
+// Var não tem escopo de bloco, por isso fica visivel/acessível fora do bloco.
+    
+for(var i = 0;i<10;i++){
+  console.log(i); // 1 2 3 4 5 6 7 8 9
+}
+console.log('i =', i); // i = 10  ~> a variavel 'i' saiu do laço quando chegou no valor 10(false).
+
+
+var funcs = [];
+for (var i = 0; i < 10 ; i++){
+  funcs.push(function() {
+    console.log(i)
+  })
+}
+
+funcs[2](); // 10
+funcs[8](); // 10
+```
+
+# Usando Let em Loop
+
+[*voltar ao indice*](#índice)
+```js
+//Let tem escopo de bloco, por isso da erro quando tenta imprimir ela fora do bloco
+
+for(let i = 0; i < 10; i++){
+  console.log(i); // 1 2 3 4 5 6 7 8 9
+}
+console.log('i =', i); // ERRO
+
+
+let funcs = []
+for (let i = 0; i < 10 ; i++){
+  funcs.push(function() {
+    console.log(i)
+  })
+}
+
+funcs[2]();// 2
+funcs[8]();// 8
 ```
