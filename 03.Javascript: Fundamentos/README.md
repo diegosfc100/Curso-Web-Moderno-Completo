@@ -782,3 +782,19 @@ var numero = 1;
 
 console.log('fora =', numero); // fora = 2
 ```
+
+# Declaração de Variáveis Com Let
+
+[*voltar ao indice*](#índice)
+```js
+//Let possui escopo global, de função e de bloco.
+
+let numero = 1
+
+{
+  let numero = 2
+  console.log('dentro =',numero);// dentro = 2
+}
+
+console.log('fora =', numero);// fora = 1
+```
