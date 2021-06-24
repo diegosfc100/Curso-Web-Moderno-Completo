@@ -16,8 +16,7 @@
 - [Tipos em JavaScript: Object](#tipos-em-javascript-object)
 - [Entendendo o Null & Undefined](#entendendo-o-null--undefined)
 - [Exemplos Básicos de Funções](#exemplos-básicos-de-funções)
-- [Declaração de Variáveis Com Var #01](#declaração-de-variáveis-com-var-01)
-- [Declaração de Variáveis Com Var #02](#declaração-de-variáveis-com-var-02)
+- [Declaração de Variáveis Com Var](#declaração-de-variáveis-com-var)
 - [Declaração de Variáveis Com Let](#declaração-de-variáveis-com-let)
 - [Usando Var em Loop #01](#usando-var-em-loop-01)
 - [Usando Let em Loop #01](#usando-let-em-loop-01)
@@ -747,4 +746,39 @@ imprimirSoma(2,3); //5
   const imprimir2 = a => a; // Caso a função tenha apenas um parâmetro, é opcional usar parenteses.
 
   imprimir2('legal'); // 'legal'
+```
+
+# Declaração de Variáveis Com Var
+
+[*voltar ao indice*](#índice)
+
+```js
+// Ao declara var fora do escopo de uma função, ela vai para escopo global.
+
+{
+    { 
+        {
+            {         
+                var sera = 'Será???'
+            }
+        }
+    }
+}
+console.log(sera);// Será???
+
+
+function teste() {
+  var local = 123
+}
+// console.log(local); // ERRO
+
+
+var numero = 1;
+
+{
+  var numero = 2;
+  console.log('dentro =', numero); // dentro = 2
+}
+
+console.log('fora =', numero); // fora = 2
 ```
