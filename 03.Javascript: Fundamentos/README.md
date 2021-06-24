@@ -843,3 +843,22 @@ for (let i = 0; i < 10 ; i++){
 funcs[2]();// 2
 funcs[8]();// 8
 ```
+
+# Entendendo o Hoisting
+
+[*voltar ao indice*](#índice)
+
+```js
+//Iça a variável para o topo do escopo. 
+//Não funciona com let.
+
+console.log('a =', a);// // a = undefined
+
+var a = 2
+console.log('a =', a); // a = 2
+
+
+console.log('b =', b); // ReferenceError: b is not defined
+let b = 2
+console.log('b =', b)
+```
