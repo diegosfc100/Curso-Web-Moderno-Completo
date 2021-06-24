@@ -911,3 +911,23 @@ console.log(obj2.nome); // Cadeira
 console.log(obj3.nome); // Mesa
 obj3.exec(); // Exec...
 ```
+# Operadores: Atribuição
+
+[*voltar ao indice*](#índice)
+```js
+const a = 7
+let b = 3
+
+b += a; // 10
+
+b -= 4; // 6
+
+b *= 2; // 12
+
+b /= 2; // 6
+
+b **= 2; // 36
+
+b %= 2; // 0
+```
+
