@@ -9,7 +9,7 @@
 - [Tipos em JavaScript: Number](#tipos-em-javascript-number)
 - [Number: Alguns Cuidados](#number-alguns-cuidados)
 - [Usando Math](#usando-math)
-- [Tipos em JavaScript: String](#tipos-em-javascript-string)
+- [Tipos em JavaScript: Strings](#tipos-em-javascript-string)
 - [Usando Template Strings](#usando-template-strings)
 - [Tipos em JavaScript: Boolean](#tipos-em-javascript-boolean)
 - [Tipos em JavaScript: Array](#tipos-em-javascript-array)
@@ -422,7 +422,7 @@ firstName.indexOf('G'); // 3
 ```
 
 
-### lastIndeOf();
+### lastIndexOf();
 
 Retorna o índice dentro do objeto String de chamada da última ocorrência do valor procurado, ou -1 se não for encontrado.
 
@@ -451,7 +451,7 @@ happy.replace('Natal', 'Ano Novo'); // 'Feliz Ano Novo'
 happy.replace(/eliz/i, 'oi ?'); // 'Foi ? Natal'
 ```
 
-### repleceAll(x,y);
+### replaceAll(x,y);
 Usado para **substituir** todas as ocorrências de x usando y.
 x pode ser uma string ou regex, e y pode ser uma string ou função.
 
@@ -471,3 +471,59 @@ str.slice(-7); // "belmiro"
 str.slice(-12, -8); // "vila"
 ```
 
+
+### split();
+**Divide uma String** em uma lista ordenada de substrings, coloca essas substrings em uma array e retorna a array.
+A divisão é feita procurando um padrão; onde o padrão é fornecido como o primeiro parâmetro na chamada do método.
+```js
+const str = 'The quick brown fox jumps over the lazy dog.';
+
+console.log(str.split(' ')[2]); // 'brown'
+console.log(str.split('')[8]); // 'k'
+console.log(str.split()); // Array ["The quick brown fox jumps over the lazy dog."]
+```
+
+
+### substring();
+O método substring() retorna a parte da string entre os índices inicial e final ou para o final da string.
+
+```js
+const str = 'Godzilla';
+
+str.substr(0, 3); // 'God'
+str.substr(3); // 'zilla'
+```
+
+
+### toString();
+
+O método toString() retorna uma string que representa o objeto especificado.
+```js
+const stringObj = new String('Hello World!');
+
+stringObj; // String { "Hello World!" }
+typeof stringObj; // 'object'
+
+stringObj.toString(); // "Hello World!"
+typeof stringObj.toString(); // 'string'
+```
+
+
+### trim();
+**Apara espaços em branco** do início e do final da string.
+```js
+const hello = '   Hello world!   ';
+
+greeting.trim();// "Hello world!"
+```
+
+
+### valueOf();
+
+O método valueOf() retorna o valor primitivo de um objeto String.
+```js
+const stringObj = new String('Frontend');
+
+stringObj; // String { 'Frontend' }
+stringObj.valueOf(); // 'Frontend'
+```
