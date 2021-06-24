@@ -9,7 +9,7 @@
 - [Tipos em JavaScript: Number](#tipos-em-javascript-number)
 - [Number: Alguns Cuidados](#number-alguns-cuidados)
 - [Usando Math](#usando-math)
-- [Tipos em JavaScript: Strings](#tipos-em-javascript-string)
+- [Tipos em JavaScript: Strings](#tipos-em-javascript-strings)
 - [Usando Template Strings](#usando-template-strings)
 - [Tipos em JavaScript: Boolean](#tipos-em-javascript-boolean)
 - [Tipos em JavaScript: Array](#tipos-em-javascript-array)
@@ -526,4 +526,32 @@ const stringObj = new String('Frontend');
 
 stringObj; // String { 'Frontend' }
 stringObj.valueOf(); // 'Frontend'
+```
+
+# Usando Template Strings
+
+[*voltar ao indice*](#índice)
+
+```js
+const name = 'Diego'
+
+const concatenacao = 'Olá'+name + '!'
+
+const template = `
+    Olá
+    ${ name }!`
+
+console.log(concatenacao, template)
+/*
+ *OláDiego! 
+ *   Olá
+ *   Diego!
+ */
+
+//Expressoes
+console.log(`1 + 1 = ${1 + 1}`)
+// 1 + 1 = 2
+
+//Funcoes
+const up = texto => texto.toUpperCase() `Ei... ${up('cuidado')}`; // Ei... CUIDADO
 ```
