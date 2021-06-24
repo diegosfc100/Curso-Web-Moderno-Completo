@@ -22,7 +22,6 @@
 - [Usando Let em Loop](#usando-let-em-loop)
 - [Entendendo o Hoisting](#entendendo-o-hoisting)
 - [Função Vs Objeto](#função-vs-objeto)
-- [Par Nome/Valor](#par-nomevalor)
 - [Notação Ponto](#notação-ponto)
 - [Operadores: Atribuição](#operadores-atribuição)
 - [Operadores: Destructuring #01](#operadores-destructuring-01)
@@ -881,4 +880,34 @@ class Produto {} // ES 2015 (ES6)
 console.log(typeof Produto); // function
 
 console.log(typeof new Produto()); // object
+```
+# Notação Ponto
+
+[*voltar ao indice*](#índice)
+
+```js
+console.log(Math.ceil(6.1)); // 7
+
+
+const obj1 = {}
+
+obj1.nome = 'Bola' // criando atributo com notação ponto.
+obj1['nome2'] = 'Bola2' // criando atributo com colchetes[].
+
+console.log(obj1.nome); // Bola
+
+
+function Obj(nome){
+  this.nome = nome;
+  this.exec = function(){
+    console.log('Exec...')
+  }
+}
+
+const obj2 = new Obj('Cadeira')
+const obj3 = new Obj('Mesa')
+
+console.log(obj2.nome); // Cadeira
+console.log(obj3.nome); // Mesa
+obj3.exec(); // Exec...
 ```
