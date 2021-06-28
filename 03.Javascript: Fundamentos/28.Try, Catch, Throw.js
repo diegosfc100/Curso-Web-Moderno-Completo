@@ -1,4 +1,4 @@
-//TRY, CATCH THROW
+//TRY, CATCH, THROW
 //O programa executa o bloco try, caso ocorra algum erro, passa para o bloco catch, e logo após o finally,
 // que sempre é chamado e é opcional. 
 
