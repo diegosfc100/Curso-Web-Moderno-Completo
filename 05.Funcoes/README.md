@@ -10,9 +10,7 @@
 - [this e a Função bind #02](#this-e-a-função-bind-02)
 - [Funções Arrow #01](#funções-arrow-01)
 - [Funções Anônimas](#funções-anônimas)
-- [Funções Callback #01](#funções-callback-01)
-- [Funções Callback #02](#funções-callback-02)
-- [Funções Callback #03](#funções-callback-03)
+- [Funções Callback](#funções-callback)
 - [Funções Construtoras](#funções-construtoras)
 - [Tipos de Declaração](#tipos-de-declaração)
 - [Contexto Léxico](#contexto-léxico)
@@ -369,4 +367,64 @@ imprimirResultado(3,4,function(x,y){ //passando uma função anonima como parame
 
 //passando uma função arrow como parametro de uma função
 imprimirResultado(3,4,(x,y) => x * y) // 12
+```
+
+# Funções Callback
+
+[*voltar ao índice*](#índice)
+```js
+// Callback é uma função passada por parâmetro que é chamada quando algum determinado evento ocorrer
+//Part I
+const fabricantes = ["Mercedes", "Audi", "BMW"]
+
+function imprimir (nome, indice) {
+    console.log(`${indice + 1}. ${nome}`)
+}
+
+fabricante.forEach(imprimir)
+// 1. Mercedes
+// 2. Audi
+// 3. Bmw
+
+fabricante.forEach(fabricante => console.log(fabricante))
+// Mercedes
+// Audi
+// Bmw
+
+
+
+//Part II
+const notas =[7.7, 6.5, 5.2, 8.9, 3.6, 7.1, 9.0]
+
+//Sem callback
+let notasBaixas = []
+for (let i in notas) {
+    if (notas[i] < 7) {
+        notasBaixas.push(notas[i])
+    }
+}
+
+console.log(notasBaixas) // [ 6.5, 5.2, 3.6 ]
+
+
+//Com callback
+notasBaixas2 = notas.filter(function(nota) {
+    return nota < 7
+})
+console.log(notasBaixas2) // [ 6.5, 5.2, 3.6 ]
+
+const notasBaixas3 = notas.filter(nota => nota < 7)
+console.log(notasBaixas2) // [ 6.5, 5.2, 3.6 ]
+
+   
+
+//Part III
+//Exemplo de callback no browser
+
+document.getElementsByTagName('body')[0].onclick = function(e) {
+    console.log('Evento ocorreu!')
+}
+
+// Se clicar no body imprimi no console: 
+// Evento ocorreu!
 ```
