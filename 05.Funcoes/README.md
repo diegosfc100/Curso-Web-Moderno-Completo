@@ -5,10 +5,10 @@
 - [Parâmetros e Retorno São Opcionais](#parâmetros-e-retorno-são-opcionais)
 - [Parâmetros Variáveis](#parâmetros-variáveis)
 - [Parâmetro Padrão](#parâmetro-padrão)
-- [this pode Variar](#this-pode-variar)
+- [This pode variar](#this-pode-variar)
 - [this e a Função bind #01](#this-e-a-função-bind-01)
 - [this e a Função bind #02](#this-e-a-função-bind-02)
-- [Funções Arrow #01](#funções-arrow-01)
+- [Funções Arrow](#funções-arrow)
 - [Funções Anônimas](#funções-anônimas)
 - [Funções Callback](#funções-callback)
 - [Funções Construtoras](#funções-construtoras)
@@ -16,12 +16,10 @@
 - [Contexto Léxico](#contexto-léxico)
 - [Closures](#closures)
 - [Função Factory #01](#função-factory-01)
-- [Função Factory #02](#função-factory-02)
 - [Classe vs Função Factory](#classe-vs-função-factory)
 - [Desafio Função Construtora](#desafio-função-construtora)
 - [IIFE - Immediately Invoked Function Expression](#iife---immediately-invoked-function-expression)
 - [Call & Apply](#call--apply)
-- [Comparação entre string e números](#comparação-entre-string-e-números)
 
 # Cidadão de Primeira Linha
 
@@ -159,7 +157,7 @@ function soma3(a = 1, b = 1, c = 1){
 console.log(soma3(),soma3(3), soma3(1,2,3), soma3(0,0,0)) // 3 5 6 0
 ```
 
-# This
+# This pode variar
 [*voltar ao índice*](#índice)
 ```js
 //Browser:
@@ -488,7 +486,7 @@ const mult = function mult(x,y) {
 
 # Contexto Léxico
 
-[*voltar ao índice*](#indice)
+[*voltar ao índice*](#índice)
 
 ```js
 
@@ -531,7 +529,7 @@ console.log(minhaFuncao()) // Local
 
 ```
 
-# Função Factory #01
+# Função Factory
 
 [*voltar ao índice*](#índice)
 ```js
@@ -560,4 +558,48 @@ function criarProduto(nome, preco, desconto = 0){
 console.log(criarProduto('Notebook',2199.49)) // { nome: 'Notebook', preco: 2199.49, desconto: 0 }
 
 console.log(criarProduto('iPad',1199.49, 0.1)) // { nome: 'iPad', preco: 1199.49, desconto: 0.1 }
+```
+
+# Classe vs Função Factory
+
+[*voltar ao índice*](#índice)
+```js
+// CLASS vs FUNÇÃO FACTORY
+// Class é uma forma diferente de construir função.
+//Dentro do browser na forma class, o this aponta pra window, então perde a propriedade nome
+
+class Pessoa {
+    constructor(nome) {
+        this.nome = nome
+    }
+    falar() {
+        console.log(`Meu nome é ${this.nome}`)
+    }
+}
+const p1 = new Pessoa('João')
+
+p1.falar() // Meu nome é joão - 
+//node
+
+
+document.getElementsByTagName('body')[0].onclick = p1.falar()
+// Meu nome é undefined  
+// Browser
+
+
+//Já com uma função factory, a propriedade continua
+const pessoa = nome => {
+    return {
+        falar: () => console.log(`Meu nome é ${nome}`)
+    }
+}
+
+
+const p2 = new Pessoa('João')
+
+p2.falar()
+// Meu nome é João   - node
+
+document.getElementsByTagName('body')[0].onclick = p2.falar()
+// Meu nome é João  -  Browser
 ```
