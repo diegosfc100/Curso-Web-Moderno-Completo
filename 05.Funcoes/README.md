@@ -485,3 +485,26 @@ const mult = function mult(x,y) {
     return x * y
 }
 ```
+
+# Contexto Léxico
+
+[*voltar ao índice*](#indice)
+
+```js
+
+//Contexto Léxico
+
+const valor = 'Global'
+
+function minhaFuncao() {
+    console.log(valor)
+}
+
+function exec() {
+    const valor = 'Local'
+    minhaFuncao() // a função carrega consigo o local onde foi definida.
+}
+
+exec()
+// Global
+```
