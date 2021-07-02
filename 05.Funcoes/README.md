@@ -603,3 +603,20 @@ p2.falar()
 document.getElementsByTagName('body')[0].onclick = p2.falar()
 // Meu nome é João  -  Browser
 ```
+# Desafio Função Construtora
+
+[*voltar ao índice*](#índice)
+```js
+
+//Transformar a classe do tópico passado em função construtora
+
+function Pessoa(nome) {
+        this.nome = nome
+    this.falar= function () {
+        console.log(`Meu nome é ${this.nome}`)
+    }
+}
+const p1 = new Pessoa('João')
+
+p1.falar() // Meu nome é joão   - node
+```
