@@ -620,3 +620,15 @@ const p1 = new Pessoa('João')
 
 p1.falar() // Meu nome é joão   - node
 ```
+# IIFE - Immediately Invoked Function Expression
+
+[*voltar ao índice*](#índice)
+```js
+//IIFE
+//Geralmente usada para fugir do escopo global
+
+(function() {
+    console.log('Será executado na hora!')
+    console.log('Foge do escopo mais abragente!')
+})()
+```
