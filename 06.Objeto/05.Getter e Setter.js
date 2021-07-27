@@ -4,7 +4,7 @@
 
 
 const seq = {
-    _valor: 1, // conveção - essa variável é pretendida ser acessável apenas internamente.
+    _valor: 1, // convenção - essa variável é pretendida ser acessável apenas internamente.
     get valor() {return this._valor++},
     set valor(valor){
         if(valor > this._valor){
@@ -13,3 +13,10 @@ const seq = {
     }
 }
 
+console.log(sequencia.valor, sequencia.valor); // 1 2
+
+sequencia.valor = 1000;
+console.log(sequencia.valor, sequencia.valor); // 1000 1001
+
+sequencia.valor = 900;
+console.log(sequencia.valor, sequencia.valor); // 1002 1003
