@@ -37,21 +37,20 @@ const pessoa = {
     value: '01/01/2021',
   });
   
+
   pessoa.dataNascimento = '20/03/1978';
-  console.log(pessoa.dataNascimento);
-  // 01/01/2021
-  console.log(Object.keys(pessoa));
-  // [ 'nome', 'idade', 'peso', 'dataNascimento' ]
+  console.log(pessoa.dataNascimento);  // 01/01/2021
+  console.log(Object.keys(pessoa));  // [ 'nome', 'idade', 'peso', 'dataNascimento' ]
   
+
   // Object.assing (ECMAScript 2015)
   const dest = { a: 1 };
   const o1 = { b: 2 };
   const o2 = { c: 3, a: 4 };
   const obj = Object.assign(dest, o1, o2);
-  console.log(obj);
-  // { a: 4, b: 2, c: 3 }
+  console.log(obj); // { a: 4, b: 2, c: 3 }
   
+
   Object.freeze(obj);
   obj.c = 1234;
-  console.log(obj);
-  // { a: 4, b: 2, c: 3 }
+  console.log(obj); // { a: 4, b: 2, c: 3 }
